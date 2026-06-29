@@ -84,3 +84,22 @@
 - alembic init alembic -- creates new file alembic
 - alembic revision --autogenerate -m "Initial migration"
 - alembic upgrade head  -- to upgrade the file
+
+## Frontend
+
+- node -v
+- npm install -g typescript
+- tsc --version
+
+- node "File_name.js"
+### Typescript
+- tsc "filename.ts" ----> create a new js file in the same name
+- node "filename.js"
+
+- npm init -y --- creates package.json
+
+### Vite
+-  npm install vite@latest
+- npm create vite@latest-talentspark  ---> down arrow -->react --> typescript.
+
+http://localhost:5173/

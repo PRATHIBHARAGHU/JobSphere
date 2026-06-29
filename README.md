@@ -77,5 +77,10 @@
 
 # Alembic - to modify tables or constraints of a particular table in models of postgres
 - pip install alembic
+
+- alembic -> env.py ->  from imported models -> metadata data
+- alembic.ini -->  SQLALCHEMY url to postgres database 
+
 - alembic init alembic -- creates new file alembic
 - alembic revision --autogenerate -m "Initial migration"
+- alembic upgrade head  -- to upgrade the file

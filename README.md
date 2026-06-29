@@ -65,6 +65,7 @@
 - Swagger AI -- validation of API
 - Pydantic -- Data validation
 - typing-extensions -- type hints
+- alembic -- database migration tool
 
 # Concepts:
 - ORM 
@@ -73,3 +74,8 @@
     - Session maker - To create a session with Database
     - SessionLocal - To create session with the database for a single request
     - declarative_base - To create a base class for all the models
+
+# Alembic - to modify tables or constraints of a particular table in models of postgres
+- pip install alembic
+- alembic init alembic -- creates new file alembic
+- alembic revision --autogenerate -m "Initial migration"

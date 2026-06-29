@@ -7,6 +7,7 @@ SQLALCHEMY_DATABE_URL = "postgresql://postgres:postgres@localhost:5432/student_d
 engine=create_engine(SQLALCHEMY_DATABE_URL)
 SessionLocal = sessionmaker(autocommit=False,autoflush=False,bind=engine)
 Base=declarative_base()
+
 def get_db():
     db=SessionLocal()
     try:

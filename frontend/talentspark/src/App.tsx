@@ -36,12 +36,24 @@ function App(){
   }
 
   
+  const handleEditCompany = (company: Company) => {
+    console.log('Edit company:', company);
+  };
+
+  const handleDeleteCompany = (id: number) => {
+    console.log('Delete company:', id);
+  };
+
+  const handleAddCompany = (company: Company) => {
+    console.log('Add company:', company);
+  };
+
   return(
     <div>
       <Navbar />
       <Welcome />
       <br />
-      <CompanyCard companies={companies}/>
+      <CompanyCard companies={companies} onedit={handleEditCompany} ondelete={handleDeleteCompany} onadd={handleAddCompany}/>
       <br />
       <JobCard />
       <br />

@@ -105,8 +105,20 @@
 http://localhost:5173/
 
 
+
 # for user authentication in JWT
-- pip install passlib
+- pip install passlib --- used to encrypt passwords
+# hashing algorithm
+argon2
+bcrypt
+
 - pip install python-jose[cryptography]
+
+- Jose --> used to create jwt tokens --> used to suthenticate and authorize users its in the format xxxx.yyyy.zzzz basically 3 parts 
+1. header -> algo + token type: {alg:HS256, typ:JWT}
+2. payload -> data, for eg: {user_id:1, role:admin}
+3. signature -> used to clarify the token: {hash(header + payload + secretkey)}
+- access token -> used to acces protected resources
+- refresh tokens -> used to refresh access tokens
 
 ## Utils 

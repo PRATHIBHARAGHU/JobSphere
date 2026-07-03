@@ -78,7 +78,7 @@
 # Alembic - to modify tables or constraints of a particular table in models of postgres
 - pip install alembic
 
-- alembic -> env.py ->  from imported models -> metadata data
+- alembic -> env.py ->  from imported models -> Base.metadata data
 - alembic.ini -->  SQLALCHEMY url to postgres database 
 
 - alembic init alembic -- creates new file alembic
@@ -122,3 +122,19 @@ bcrypt
 - refresh tokens -> used to refresh access tokens
 
 ## Utils 
+
+## RBAC
+- Role Based Access Control
+-> used to give different permissionsto different roles
+-> eg: admin can do anything, user can do only specific things
+-> use oauth2 module to implement RBAC
+-> get_current_user() - for authenticated user
+-> role_required() - fro role based access control
+-> create_access_token() - for creating access token with(secret_key, algorithm, payload) - token created then 
+->verify_access_token() - for decoding acess token with (Secret  key, algorith.token) - token decoded then
+
+## Flow of application 
+1. login --> create access token 
+2. access token --> get current user
+3. current user --> get role --> role_required --> access protected resources
+

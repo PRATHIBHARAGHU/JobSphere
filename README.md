@@ -9,3 +9,40 @@
  - uvicorn app.main:app --reload
 #### Run frontend 
 - npm run dev
+
+
+## Architecture
+backend/
+    app/
+        -- main.py
+        -- database.py
+    models/
+        -- users.py
+        -- company.py
+        -- job.py
+    schemas/
+        -- users.py
+        -- company.py
+        -- job.py
+    routers/
+        -- users.py
+        -- company.py
+        -- job.py
+    utils.py/
+        -- oauth2.py
+        -- security.py
+        -- token.py
+        --
+    alembic.ini
+    alembic/env.py
+    
+
+
+
+
+
+
+
+
+
+https://meet.google.com/ens-mkxd-wgb

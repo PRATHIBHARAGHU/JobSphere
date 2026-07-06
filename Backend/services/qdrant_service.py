@@ -9,14 +9,14 @@ from models.job import Job
 load_dotenv()
 
 COLLECTION_NAME = "job_descriptions"
-VECTOR_SIZE = 384 #BAAI/bge-small-en-vl.5 outputs 384-dim vectors
+VECTOR_SIZE = 384 #BAAI/bge-small-en-v1.5 outputs 384-dim vectors
 
 qdrant=QdrantClient(
     url=os.getenv("QDRANT_URL"),
     api_key=os.getenv("QDRANT_API_KEY"),
 )
 
-embeddings_model=TextEmbedding("BAAI/bge-small-en-vl.5")
+embeddings_model=TextEmbedding("BAAI/bge-small-en-v1.5")
 
 def ensure_collection():
     collections=[c.name for c in qdrant.get_collections().collections]

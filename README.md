@@ -60,8 +60,41 @@ context-window - it is the maximum number of words that the llm can process at a
 langchain -> its a framework to build llm's, its useful to connect llm to external sources of information -> like database, files, websites -> it is used to create complex workflows of llm -> like chatbot that can answer questions about specific documents
 
 
-
 -Vercel ---> 
 "user"://"password"
 
 https://meet.google.com/ens-mkxd-wgb
+
+#### every llm has a default model --> Transformers
+
+RAG - Retrival Augmented Generation
+It is used to increase the accuracy of llm by providing relevant information to the llm -> it is used to increase the accuracy of llm by providing relevant information to the llm
+
+
+How will it make chunks in vector db?
+let's say we have 3 documents --> each one has 100 words so it will make 3 chunks -- each chunk will overlap with previous chunk by 100 chars -> so each chunk will have 500 chars
+like 0-499 --> 400-899 ---> 800-1399
+
+this chunk will be converted into vectors
+eg: I am a developer, I have 3 years of expirience in python developement. I have good knowledge of python developement and I am  good python developer. I have good knowledge of fastapi 
+--> will convert all the 3 chunks into vectors
+
+#### godlocks principle ---> just right amount of information
+semantic search -> It is used to find the most relevant information to the query -> It is used to find the most relevant information to query.
+
+semantic similarity
+It is used to find the most similar vectors
+if two vectors are close to each other and similar
+
+cosine similarity -> used iin nlp to find the similarity between two vectors
+
+quadrantdb -is a vector database
+it is used to store the vectors and do the semantic search
+embeddings model -> it is used to convert the text into vectors
+
+initially without rag
+user query -> send to llm -> here transformers model will answer based on its training data -> response
+
+with rag
+user query -> embed done by embeddings model -> vector -> semantic search done by quadrantdb(vectordb) -> retrieve relevant chunks -> construct prompt -> combined text+query -> llm -> response
+

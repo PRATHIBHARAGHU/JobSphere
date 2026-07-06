@@ -32,6 +32,7 @@
 # FLOW OF AN APPLICATION
 # React/TS(UI) ---> axios ----> localhost:8000(api call) ----> fastapi(python/Backend) ----> db ----> useEffect ----> setstate ----> re-render ----> UI 
 
+API key ---> used to connect external application to our application.
 
 http://localhost:5173/
 

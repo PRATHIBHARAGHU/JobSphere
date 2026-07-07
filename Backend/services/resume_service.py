@@ -6,7 +6,7 @@ load_dotenv()
 llm=ChatGroq(
     model="llama-3.3-70b-versatile",
     api_key=os.getenv("GROQ_API_KEY"),
-    temparature=0.3,
+    temperature=0.3,
 )
 resume_propmt=ChatPromptTemplate.from_messages([
     ("system","""You are a professional resume analyser. Analyse the given resume text and provide:

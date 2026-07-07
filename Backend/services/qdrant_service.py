@@ -25,13 +25,13 @@ def ensure_collection():
         info=qdrant.get_collection(COLLECTION_NAME)
         existing_size=info.config.params.vectors.size
         if existing_size!= VECTOR_SIZE:
-            qdrant.delet_collection(COLLECTION_NAME)
+            qdrant.delete_collection(COLLECTION_NAME)
             collections.remove(COLLECTION_NAME)
-        if COLLECTION_NAME not in collections:
-            qdrant.create_collection(
-                collection_name=COLLECTION_NAME,
-                vectors_config=VectorParams(size=VECTOR_SIZE,distance=Distance.COSINE)
-            )
+    if COLLECTION_NAME not in collections:
+        qdrant.create_collection(
+            collection_name=COLLECTION_NAME,
+            vectors_config=VectorParams(size=VECTOR_SIZE,distance=Distance.COSINE)
+        )
 def embed_text(text:str) -> list[float]:
     return next(embeddings_model.embed([text])).tolist()
 def embed_all_jobs(db:Session)->int:
@@ -85,10 +85,10 @@ def match_jobs_for_profile(skills:str,experience:str,top_k:int=5)->list[dict]:
     return[
         {
             "job_id":hit.payload.get("job_id"),
-            "title":hit.apyload.get("title",),
+            "title":hit.payload.get("title"),
             "description":hit.payload.get("description"),
             "salary":hit.payload.get("salary"),
-            "score":round(hit.score*100,2)
+            "match_score":round(hit.score*100,2)
         }
         for hit in results.points
     ]

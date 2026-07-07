@@ -7,7 +7,7 @@ load_dotenv()
 llm=ChatGroq(
     model="llama-3.3-70b-versatile",
     api_key=os.getenv("GROQ_API_KEY"),
-    temparature=0.3,
+    temperature=0.3,
 )
 rag_prompt=ChatPromptTemplate.from_messages([
     ("system",""""You are a job search assistant.Use following job listings retrieved from the database to answer If no relevant jobs are found, say so clearly.

@@ -98,3 +98,19 @@ user query -> send to llm -> here transformers model will answer based on its tr
 with rag
 user query -> embed done by embeddings model -> vector -> semantic search done by quadrantdb(vectordb) -> retrieve relevant chunks -> construct prompt -> combined text+query -> llm -> response
 
+## Before Deployement checklist
+.env configured
+on startup create all tables in db
+async await in every api and function and sessions handling for all apis
+exception handeling for all apis ->
+eg.
+1. resourse not found
+2. internal server error
+3. bad request
+4. unauthorized 
+5. forbidden
+6. validation error
+7. email already exists
+8. password incorrect
+9. company not found
+

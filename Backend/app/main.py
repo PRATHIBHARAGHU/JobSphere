@@ -13,6 +13,13 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
+@app.on_event('startup')
+async def startup_event():
+    from database import engine
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.createall)
+
+
 # Base.metadata.create_all(bind=engine) # create the tables in the database if they do not exist already
 
 app.include_router(auth.router)
